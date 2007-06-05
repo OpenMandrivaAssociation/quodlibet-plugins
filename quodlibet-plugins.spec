@@ -7,7 +7,9 @@ Summary: 	Advanced, elegant jukebox style music player plugins
 Version: 	%{version}
 Release: 	%{release}
 
-Source:		http://www.sacredchao.net/~piman/software/%{name}-%{version}.tar.bz2
+Source0:	http://www.sacredchao.net/~piman/software/%{name}-%{version}.tar.bz2
+Source1:	google.py
+Source2:	dl-quodlibet-plugins.sh
 URL:		http://www.sacredchao.net/quodlibet/
 License:	GPL
 Group:		Sound
@@ -35,10 +37,13 @@ support, gapless playback, multimedia keys, and an OSD.
 %setup -q
 
 %install
+rm -rf %{buildroot}
 mkdir -p %{buildroot}/%{_datadir}/quodlibet/plugins/
 cp -rf editing %{buildroot}/%{_datadir}/quodlibet/plugins/
 cp -rf events %{buildroot}/%{_datadir}/quodlibet/plugins/
 cp -rf songsmenu %{buildroot}/%{_datadir}/quodlibet/plugins/
+cp %{SOURCE1} %{buildroot}%{_datadir}/quodlibet/plugins/songsmenu
+cp %{SOURCE2} %{buildroot}%{_datadir}/quodlibet/plugins/
 
 %clean
 rm -rf $RPM_BUILD_ROOT
