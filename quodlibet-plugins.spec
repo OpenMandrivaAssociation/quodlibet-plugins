@@ -14,7 +14,6 @@ URL:		http://www.sacredchao.net/quodlibet/
 License:	GPL
 Group:		Sound
 BuildArch:	noarch
-BuildRoot:	%{_tmppath}/%{name}-buildroot
 BuildRequires:	python
 Requires:	python >= 2.5
 Requires:	quodlibet
