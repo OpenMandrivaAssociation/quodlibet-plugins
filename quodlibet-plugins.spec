@@ -1,6 +1,6 @@
 %define name	quodlibet-plugins
 %define version	1.0
-%define release %mkrel 1
+%define release %mkrel 3
 
 Name: 	 	%{name}
 Summary: 	Advanced, elegant jukebox style music player plugins
