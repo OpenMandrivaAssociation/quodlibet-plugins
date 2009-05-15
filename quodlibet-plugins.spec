@@ -1,22 +1,20 @@
 %define name	quodlibet-plugins
-%define version	1.0
-%define release %mkrel 4
+%define version	svn04022009
+%define release %mkrel 1
 
 Name: 	 	%{name}
 Summary: 	Advanced, elegant jukebox style music player plugins
 Version: 	%{version}
 Release: 	%{release}
 
-Source0:	http://www.sacredchao.net/~piman/software/%{name}-%{version}.tar.bz2
-Source1:	google.py
-Source2:	dl-quodlibet-plugins.sh
-URL:		http://www.sacredchao.net/quodlibet/
-License:	GPL
+Source0:	%{name}-%{version}.tar.bz2
+URL:		http://code.google.com/p/quodlibet/
+License:	GPLv2
 Group:		Sound
 BuildArch:	noarch
 BuildRoot:	%{_tmppath}/%{name}-buildroot
+
 BuildRequires:	python
-Requires:	python >= 2.5
 Requires:	quodlibet
 
 %description
@@ -38,35 +36,13 @@ support, gapless playback, multimedia keys, and an OSD.
 
 %install
 rm -rf %{buildroot}
-mkdir -p %{buildroot}/%{_datadir}/quodlibet/plugins/
-cp -rf editing %{buildroot}/%{_datadir}/quodlibet/plugins/
-cp -rf events %{buildroot}/%{_datadir}/quodlibet/plugins/
-cp -rf songsmenu %{buildroot}/%{_datadir}/quodlibet/plugins/
-cp %{SOURCE1} %{buildroot}%{_datadir}/quodlibet/plugins/songsmenu
-cp %{SOURCE2} %{buildroot}%{_datadir}/quodlibet/plugins/
+mkdir -p %{buildroot}%{py_sitedir}/quodlibet/
+cp -rf plugins %{buildroot}%{py_sitedir}/quodlibet/
+
 
 %clean
-rm -rf $RPM_BUILD_ROOT
-
-%pre
-# quodlibet plugins directory
-QL_PLD=/usr/share/quodlibet/plugins
-
-# we want to provide a clean upgrade path from previous versions
-PYC_FILES=`find ${QL_PLD} -name "*.pyc"`
-# don't touch .pyc files that are created by the quodlibet package
-PYC_FILES=`echo ${PYC_FILES} | sed -e s,${QL_PLD}/editing.pyc,,`
-PYC_FILES=`echo ${PYC_FILES} | sed -e s,${QL_PLD}/events.pyc,,`
-PYC_FILES=`echo ${PYC_FILES} | sed -e s,${QL_PLD}/__init__.pyc,,`
-PYC_FILES=`echo ${PYC_FILES} | sed -e s,${QL_PLD}/songsmenu.pyc,,`
-
-for i in ${PYC_FILES}
-do
-    rm $i
-done
+rm -rf %{buildroot}
 
 %files
 %defattr(0644,root,root,0755)
-%{_datadir}/quodlibet/plugins/
-%{_datadir}/quodlibet/plugins/
-%{_datadir}/quodlibet/plugins/
+%{py_sitedir}/quodlibet/plugins/*
