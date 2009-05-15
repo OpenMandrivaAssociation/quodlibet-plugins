@@ -1,5 +1,5 @@
 %define name	quodlibet-plugins
-%define version	svn04022009
+%define version	4351svn
 %define release %mkrel 1
 
 Name: 	 	%{name}
