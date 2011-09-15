@@ -32,8 +32,8 @@ support, gapless playback, multimedia keys, and an OSD.
 
 %install
 rm -rf %{buildroot}
-mkdir -p %{buildroot}%{py_sitedir}/quodlibet/
-cp -rf plugins %{buildroot}%{py_sitedir}/quodlibet/
+mkdir -p %{buildroot}%{py_sitedir}/quodlibet/plugins
+cp -rf * %{buildroot}%{py_sitedir}/quodlibet/plugins/
 
 
 %clean
