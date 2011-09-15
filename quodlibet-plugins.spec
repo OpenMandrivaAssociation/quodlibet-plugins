@@ -1,5 +1,6 @@
 Name: 	 	quodlibet-plugins
 Summary: 	Advanced, elegant jukebox style music player plugins
+Epoch:		1
 Version: 	2.3.1
 Release: 	1
 
