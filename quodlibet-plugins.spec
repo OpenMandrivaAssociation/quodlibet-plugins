@@ -1,13 +1,9 @@
-%define name	quodlibet-plugins
-%define version	4351svn
-%define release %mkrel 1
-
-Name: 	 	%{name}
+Name: 	 	quodlibet-plugins
 Summary: 	Advanced, elegant jukebox style music player plugins
-Version: 	%{version}
-Release: 	%{release}
+Version: 	2.3.1
+Release: 	1
 
-Source0:	%{name}-%{version}.tar.bz2
+Source0:	%{name}-%{version}.tar.gz
 URL:		http://code.google.com/p/quodlibet/
 License:	GPLv2
 Group:		Sound
