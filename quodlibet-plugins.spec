@@ -1,7 +1,7 @@
 Name: 	 	quodlibet-plugins
 Summary: 	Advanced, elegant jukebox style music player plugins
 Epoch:		1
-Version: 	2.3.1
+Version: 	2.4.1
 Release: 	1
 
 Source0:	%{name}-%{version}.tar.gz
@@ -9,7 +9,6 @@ URL:		http://code.google.com/p/quodlibet/
 License:	GPLv2
 Group:		Sound
 BuildArch:	noarch
-BuildRoot:	%{_tmppath}/%{name}-buildroot
 
 BuildRequires:	python
 Requires:	quodlibet
@@ -32,13 +31,9 @@ support, gapless playback, multimedia keys, and an OSD.
 %setup -q
 
 %install
-rm -rf %{buildroot}
 mkdir -p %{buildroot}%{py_sitedir}/quodlibet/plugins
 cp -rf * %{buildroot}%{py_sitedir}/quodlibet/plugins/
 
-
-%clean
-rm -rf %{buildroot}
 
 %files
 %defattr(0644,root,root,0755)
