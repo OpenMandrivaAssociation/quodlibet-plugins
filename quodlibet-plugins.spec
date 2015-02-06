@@ -2,7 +2,7 @@ Name: 	 	quodlibet-plugins
 Summary: 	Advanced, elegant jukebox style music player plugins
 Epoch:		1
 Version: 	2.4.1
-Release: 	1
+Release: 	2
 
 Source0:	%{name}-%{version}.tar.gz
 URL:		http://code.google.com/p/quodlibet/
