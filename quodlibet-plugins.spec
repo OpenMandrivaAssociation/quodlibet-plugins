@@ -5,7 +5,7 @@ Version: 	2.4.1
 Release: 	3
 
 Source0:	%{name}-%{version}.tar.gz
-URL:		http://code.google.com/p/quodlibet/
+URL:		https://code.google.com/p/quodlibet/
 License:	GPLv2
 Group:		Sound
 BuildArch:	noarch
